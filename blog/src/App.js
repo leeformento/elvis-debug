@@ -58,7 +58,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/posts')
+      .get('https://fierce-temple-45645.herokuapp.com/api/posts')
       .then(response => this.setState({ posts: response.data }))
       .catch(error => console.log(error));
   }
