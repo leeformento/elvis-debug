@@ -40,6 +40,9 @@ server.put('/api/posts/:id', postsRouter);
 server.use(express.static(path.resolve(__dirname, 'build')))
 
 server.get('*', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
     res.sendFile(path.join(__dirname+'build', 'index.html'));
 });
 
