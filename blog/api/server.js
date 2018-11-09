@@ -19,9 +19,9 @@ server.use(morgan('short')); // third party
 // server.use(gatekeeper); // using middleware globally
 
 // configure endpoints (route handlers are middleware!!)
-server.get('/', (req, res) => {
-  res.status(200).json({ api: 'running' });
-});
+// server.get('/', (req, res) => {
+//   res.status(200).json({ api: 'running' });
+// });
 
 // server.get('/secret', gatekeeper, (req, res) => {
 //   res.send(req.welcomeMessage);

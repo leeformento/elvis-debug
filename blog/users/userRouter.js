@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/api/users/:id', async (req, res) => {
+router.get('/api/:id', async (req, res) => {
   const { id } = req.params;
   console.log('this is the id: ', id);
   try {
@@ -32,7 +32,7 @@ router.get('/api/users/:id', async (req, res) => {
   }
 });
 
-router.get('/api/users/posts/:id', async (req, res) => {
+router.get('/api/posts/:id', async (req, res) => {
   const { id } = req.params;
   console.log('this is the id: ', id);
   try {
@@ -47,7 +47,7 @@ router.get('/api/users/posts/:id', async (req, res) => {
   }
 });
 
-router.post('/api/users', upperCaseThat, async (req, res) => {
+router.post('/users', upperCaseThat, async (req, res) => {
   const userData = req.body;
   console.log(req.body);
   if (!userData.name) {
@@ -63,7 +63,7 @@ router.post('/api/users', upperCaseThat, async (req, res) => {
   }
 });
 
-router.delete('/api/users/:id', (req, res) => {
+router.delete('/users/:id', (req, res) => {
   const { id } = req.params;
   userDb
     .remove(id)
@@ -77,7 +77,7 @@ router.delete('/api/users/:id', (req, res) => {
     });
 });
 
-router.put('/api/users/:id', upperCaseThat, async (req, res) => {
+router.put('/api/:id', upperCaseThat, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;

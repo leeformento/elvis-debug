@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/api/posts/:id', async (req, res) => {
+router.get('/api/:id', async (req, res) => {
   const { id } = req.params;
   console.log(id);
   try {
@@ -32,7 +32,7 @@ router.get('/api/posts/:id', async (req, res) => {
   }
 });
 
-router.post('/api/posts', async (req, res) => {
+router.post('/api', async (req, res) => {
   const postData = req.body;
   console.log(req.body);
   if (!postData.text || !postData.userId) {
@@ -47,7 +47,7 @@ router.post('/api/posts', async (req, res) => {
   }
 });
 
-router.delete('/api/posts/:id', (req, res) => {
+router.delete('/api/:id', (req, res) => {
   const { id } = req.params;
   postDb
     .remove(id)
@@ -61,7 +61,7 @@ router.delete('/api/posts/:id', (req, res) => {
     });
 });
 
-router.put('/api/posts/:id', async (req, res) => {
+router.put('/api/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;

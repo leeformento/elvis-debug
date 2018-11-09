@@ -1,42 +1,44 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import styled from 'styled-components';
+import Posts from './Posts'
 
-let PostsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  background: gray;
-  color: black;
-  justify-content: space-around;
-  padding-bottom: 50px;
-`;
+// import styled from 'styled-components';
 
-let PostContainer = styled.div`
-  border: dashed gold;
-  width: 27.5%;
-  height: auto;
-  margin-top: 50px;
-`;
+// let PostsContainer = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   background: gray;
+//   color: black;
+//   justify-content: space-around;
+//   padding-bottom: 50px;
+// `;
 
-let TitleContainer = styled.h1`
-  color: gold;
-  width: 100%;
-  margin-top: 0px;
-  margin-bottom: -50px;
-`;
+// let PostContainer = styled.div`
+//   border: dashed gold;
+//   width: 27.5%;
+//   height: auto;
+//   margin-top: 50px;
+// `;
 
-let GuessButton = styled.button`
-  color: black;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  border: 2px solid gold;
-  background-color: white;
-  padding: 14px 28px;
-  font-size: 12px;
-  cursor: pointer;
-`;
+// let TitleContainer = styled.h1`
+//   color: gold;
+//   width: 100%;
+//   margin-top: 0px;
+//   margin-bottom: -50px;
+// `;
+
+// let GuessButton = styled.button`
+//   color: black;
+//   margin-bottom: 20px;
+//   border-radius: 12px;
+//   border: 2px solid gold;
+//   background-color: white;
+//   padding: 14px 28px;
+//   font-size: 12px;
+//   cursor: pointer;
+// `;
 
 class App extends Component {
   constructor(props) {
@@ -56,28 +58,15 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('localhost:9000/api/posts')
+      .get('http://localhost:5000/api/posts')
       .then(response => this.setState({ posts: response.data }))
       .catch(error => console.log(error));
   }
 
   render() {
     return (
-      <div className="App">
-        {' '}
-        <PostsContainer>
-          <TitleContainer>
-            <h1>Guess the LOTR Character</h1>
-          </TitleContainer>
-          {this.state.posts.map(post => {
-            return (
-              <PostContainer key={post.id} title={post.title} contents={post.contents}>
-                <p>{post.title}</p>
-                <GuessButton>{post.contents}</GuessButton>
-              </PostContainer>
-            );
-          })}
-        </PostsContainer>
+      <div className="App2">
+      <Posts posts={this.state.posts} />
       </div>
     );
   }
