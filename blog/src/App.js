@@ -56,7 +56,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('https://elvis-debug.herokuapp.com/api/posts')
+      .get('localhost:9000/api/posts')
       .then(response => this.setState({ posts: response.data }))
       .catch(error => console.log(error));
   }
