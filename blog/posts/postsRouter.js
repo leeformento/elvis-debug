@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     console.log('the error is: ', error);
     res.status(500).json({ message: " error: 'The posts could not be retrieved'", error: error });
   }
-});
+}); 
 
 router.get('/api/:id', async (req, res) => {
   const { id } = req.params;
@@ -81,5 +81,6 @@ router.put('/api/:id', async (req, res) => {
     res.status(500).json({ error: 'The post could not be updated.' });
   }
 });
+
 
 module.exports = router;

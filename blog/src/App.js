@@ -3,43 +3,6 @@ import axios from 'axios';
 import './App.css';
 import Posts from './Posts'
 
-// import styled from 'styled-components';
-
-// let PostsContainer = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: row;
-//   background: gray;
-//   color: black;
-//   justify-content: space-around;
-//   padding-bottom: 50px;
-// `;
-
-// let PostContainer = styled.div`
-//   border: dashed gold;
-//   width: 27.5%;
-//   height: auto;
-//   margin-top: 50px;
-// `;
-
-// let TitleContainer = styled.h1`
-//   color: gold;
-//   width: 100%;
-//   margin-top: 0px;
-//   margin-bottom: -50px;
-// `;
-
-// let GuessButton = styled.button`
-//   color: black;
-//   margin-bottom: 20px;
-//   border-radius: 12px;
-//   border: 2px solid gold;
-//   background-color: white;
-//   padding: 14px 28px;
-//   font-size: 12px;
-//   cursor: pointer;
-// `;
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -51,10 +14,6 @@ class App extends Component {
       // }
     };
   }
-
-  // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
-  // Notice what your map function is looping over and returning inside of Smurfs.
-  // You'll need to make sure you have the right properties on state and pass them down to props.
 
   componentDidMount() {
     axios
@@ -73,4 +32,6 @@ class App extends Component {
 }
 
 export default App;
-//try
+
+// heroku create --buildpack mars/create-react-app (static version)
+// git push heroku master
